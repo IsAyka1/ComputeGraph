@@ -1,7 +1,10 @@
 import copy
 import dataclasses
-import pytest
+import json
 import typing as tp
+from pathlib import PosixPath
+
+import pytest
 from pytest import approx
 
 from compgraph import operations as ops
@@ -13,6 +16,14 @@ class _Key:
 
     def __call__(self, d: tp.Mapping[str, tp.Any]) -> tuple[str, ...]:
         return tuple(str(d.get(key)) for key in self._items)
+
+
+def func_edit_row(row: ops.TRow) -> None:
+    row['text'], row['test_id'] = str(row['test_id']), row['text']
+
+
+def func_find_div(row: ops.TRow) -> float:
+    return row['number_1'] / row['number_2']
 
 
 @dataclasses.dataclass
@@ -139,6 +150,44 @@ MAP_CASES = [
             {'value': 144}
         ],
         cmp_keys=('value',)
+    ),
+    MapCase(
+        mapper=ops.Apply(func=lambda x: x['text'][::-1], result_column='reversed'),
+        data=[
+            {'test_id': 1, 'text': 'one two three'},
+            {'test_id': 2, 'text': 'testing out stuff'}
+        ],
+        ground_truth=[
+            {'test_id': 1, 'text': 'one two three', 'reversed': 'eerht owt eno'},
+            {'test_id': 2, 'text': 'testing out stuff', 'reversed': 'ffuts tuo gnitset'}
+        ],
+        cmp_keys=('test_id', 'text')
+    ),
+    MapCase(
+        mapper=ops.Apply(func=func_edit_row),
+        data=[
+            {'test_id': 1, 'text': 'one two three'},
+            {'test_id': 2, 'text': 'testing out stuff'}
+        ],
+        ground_truth=[
+            {'test_id': 'one two three', 'text': '1'},
+            {'test_id': 'testing out stuff', 'text': '2'}
+        ],
+        cmp_keys=('test_id', 'text')
+    ),
+    MapCase(
+        mapper=ops.Apply(func=func_find_div, result_column='div'),
+        data=[
+            {'test_id': 1, 'number_1': 5, 'number_2': 15},
+            {'test_id': 2, 'number_1': 5, 'number_2': 10},
+            {'test_id': 3, 'number_1': 258_963_479, 'number_2': 679}
+        ],
+        ground_truth=[
+            {'test_id': 1, 'number_1': 5, 'number_2': 15, 'div': approx(0.333, abs=0.001)},
+            {'test_id': 2, 'number_1': 5, 'number_2': 10, 'div': approx(0.5)},
+            {'test_id': 3, 'number_1': 258_963_479, 'number_2': 679, 'div': approx(381_389.513)}
+        ],
+        cmp_keys=('test_id', 'text')
     )
 ]
 
@@ -157,6 +206,24 @@ def test_mapper(case: MapCase) -> None:
     result = ops.Map(case.mapper)(iter(case.data))
     assert isinstance(result, tp.Iterator)
     assert sorted(case.ground_truth, key=key_func) == sorted(result, key=key_func)
+
+
+def test_read_txt_to_csv(tmp_path: PosixPath) -> None:
+    data = [
+        {'test_id': 1, 'text': 'one two three'},
+        {'test_id': 2, 'text': 'testing out stuff'}
+    ]
+
+    sub_path = tmp_path / 'sub'
+    sub_path.mkdir()
+    file = sub_path / 'data.txt'
+    with open(file, 'w') as f:
+        for row in data:
+            print(json.dumps(row), file=f)
+    assert file.exists()
+    new_file = ops.ReadTxtToCSV(str(file))()
+    assert PosixPath(new_file).exists()
+
 
 
 @dataclasses.dataclass
@@ -555,3 +622,5 @@ def test_joiner(case: JoinCase) -> None:
     result = ops.Join(case.joiner, case.join_keys)(iter(case.data_left), iter(case.data_right))
     assert isinstance(result, tp.Iterator)
     assert sorted(case.ground_truth, key=key_func) == sorted(result, key=key_func)
+
+

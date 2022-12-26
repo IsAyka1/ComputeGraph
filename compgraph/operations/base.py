@@ -42,19 +42,22 @@ class ReadIterFactory(Operation):
             yield row
 
 
-class ReadToCSV:
+class ReadTxtToCSV:
     """Create csv file full rows from file"""
 
     def __init__(self, filename: str) -> None:
         self.filename = filename
 
-    def __call__(self) -> None:
+    def __call__(self) -> str:
         data_lst = []
         for row in Read(self.filename, lambda x: json.loads(x))():
             data_lst.append(row)
         name = Path(self.filename).stem
-        pd.DataFrame(data_lst).to_csv('../../resources/' + name + '.csv', index=False)
+        parent = Path(self.filename).parent
+        new_file_name = str(parent) + name + '.csv'
+        pd.DataFrame(data_lst).to_csv(new_file_name, index=False)
+        return new_file_name
 
 
-__all__ = ['Operation', 'Read', 'ReadIterFactory', 'ReadToCSV',
+__all__ = ['Operation', 'Read', 'ReadIterFactory', 'ReadTxtToCSV',
            'TRow', 'TRowsIterable', 'TRowsGenerator', 'TRowsNext']

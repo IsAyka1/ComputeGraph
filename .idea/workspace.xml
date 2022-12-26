@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ad2a398-e70b-403f-bf4f-72986b8c9d9d" name="Changes" comment="" />
+    <list default="true" id="0ad2a398-e70b-403f-bf4f-72986b8c9d9d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LIB_README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compgraph/operations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/compgraph/operations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compgraph/operations/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/compgraph/operations/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shad_env/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shad_env/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shad_env/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shad_env/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shad_env/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/REQUESTED" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shad_env/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shad_env/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/entry_points.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shad_env/lib/python3.10/site-packages/setuptools-63.2.0.dist-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shad_env/lib/python3.10/site-packages/setuptools/_distutils/command/bdist_msi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shad_env/lib/python3.10/site-packages/setuptools/_distutils/command/bdist_wininst.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/correctness/test_operations.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/correctness/test_operations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_examples.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/correctness/test_cli.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/correctness/test_graph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_operations.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,21 +48,63 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.pytest in test_operations.py">
-    <configuration name="pytest in test_algorithms.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/correctness" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.pytest for test_operations.test_read_txt_to_csv">
+    <configuration name="memory_watchdog" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Compute_Graph" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/memory" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/memory/memory_watchdog.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_algorithms.test_yandex_maps" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Compute_Graph" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/correctness" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/memory/test_algorithms.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;test_algorithms.test_yandex_maps&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_operations.test_read_txt_to_csv" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Compute_Graph" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/correctness" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_operations.test_read_txt_to_csv&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="pytest in test_operations.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
@@ -62,10 +123,29 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest in test_operations.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Compute_Graph" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/correctness" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/correctness/test_operations.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_operations.test_read_txt_to_csv" />
+        <item itemvalue="Python tests.pytest for test_algorithms.test_yandex_maps" />
+        <item itemvalue="Python tests.pytest in test_operations.py (1)" />
+        <item itemvalue="Python.memory_watchdog" />
         <item itemvalue="Python tests.pytest in test_operations.py" />
-        <item itemvalue="Python tests.pytest in test_algorithms.py" />
       </list>
     </recent_temporary>
   </component>
