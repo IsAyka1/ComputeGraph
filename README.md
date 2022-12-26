@@ -1,4 +1,4 @@
-## Compgraph
+## Compute Graph
 `computation graphs` `map` `reduce` `join` `sort` `MapReduce`
 
 ### Project Description
