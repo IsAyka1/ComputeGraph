@@ -225,7 +225,6 @@ def test_read_txt_to_csv(tmp_path: PosixPath) -> None:
     assert PosixPath(new_file).exists()
 
 
-
 @dataclasses.dataclass
 class ReduceCase:
     reducer: ops.Reducer
@@ -622,5 +621,3 @@ def test_joiner(case: JoinCase) -> None:
     result = ops.Join(case.joiner, case.join_keys)(iter(case.data_left), iter(case.data_right))
     assert isinstance(result, tp.Iterator)
     assert sorted(case.ground_truth, key=key_func) == sorted(result, key=key_func)
-
-

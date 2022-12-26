@@ -1,3 +1,5 @@
+# flake8: noqa
+
 from .base import Operation, Read, ReadIterFactory, ReadTxtToCSV, TRow, TRowsIterable, TRowsGenerator
 from .external_sort import ExternalSort
 from .join import Join, Joiner, InnerJoiner, OuterJoiner, RightJoiner, LeftJoiner
