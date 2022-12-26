@@ -1,0 +1,8 @@
+LICENSE
+pyproject.toml
+setup.py
+compgraph/compgraph.egg-info/PKG-INFO
+compgraph/compgraph.egg-info/SOURCES.txt
+compgraph/compgraph.egg-info/dependency_links.txt
+compgraph/compgraph.egg-info/requires.txt
+compgraph/compgraph.egg-info/top_level.txt
