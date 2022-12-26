@@ -20,11 +20,11 @@ jobs:
       - name: Lint with flake8
         run: |
           pip install flake8
-          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics --exclude shad_env
+          flake8 . --count --exit-zero --statistics --exclude shad_env
       - name: Typing with mypy
         run: |
           pip install mypy
-          python -m mypy
+          python -m mypy compgraph/ examples/
       - name: Test coverage + tests
         run: |
            pip install pytest
