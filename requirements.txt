@@ -1,5 +1,6 @@
 # data
 pandas==1.4.4
+numpy==1.23.2
 
 # visualisation
 matplotlib==3.5.3
