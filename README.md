@@ -58,7 +58,7 @@ You can run graph anytimes with different input.
 pip install compgraph
 ```
 ### How to use
-Составьте граф из операций, а затем запустите его на своих данных
+Create a graph from stack of operations then run it from using your own data
 ```commandline
 graph = Graph().operation1(...)
                .operation2(...)
